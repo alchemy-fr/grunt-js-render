@@ -67,7 +67,4 @@ module.exports = function (grunt) {
 
     // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);
-
-    // Watch lib files to run tests on changes
-    grunt.registerTask('watch')
 };

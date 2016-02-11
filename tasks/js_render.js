@@ -32,13 +32,13 @@ module.exports = function (grunt) {
             compiler = new Compiler(grunt, options);
 
         this.files.forEach(function (f) {
+            f.src
+                .filter(filter)
+                .map(compiler.compile);
+
             grunt.file.write(
                 f.dest,
-                f.src
-                    .filter(filter)
-                    .map(compiler.compile)
-                    .join(join(options))
-                    .concat(options.separator)
+                compiler.getCompiledFile()
             );
 
             grunt.log.writeln('File "' + f.dest + '" created.');

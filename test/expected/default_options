@@ -1,1 +1,4 @@
-$.templates("test_fixtures_template", "<html><head></head><body>{{:content}}</body></html>");
+(function (jQuery) {
+    'use strict';
+    jQuery.templates("test_fixtures_template", "<html><head></head><body>{{:content}}</body></html>");
+}($));
