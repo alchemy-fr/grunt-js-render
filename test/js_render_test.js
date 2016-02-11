@@ -43,5 +43,14 @@ exports.js_render = {
 
         test.equal(actual.trim(), expected.trim(), 'Multiple templates should be compiled and appended to the same file.');
         test.done();
+    },
+    custom_base: function (test) {
+        test.expect(1);
+
+        var actual = grunt.file.read('tmp/custom_base.js');
+        var expected = grunt.file.read('test/expected/custom_base');
+
+        test.equal(actual.trim(), expected.trim(), 'Template paths should be relative to defined cwd.');
+        test.done();
     }
 };

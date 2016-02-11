@@ -27,12 +27,15 @@ module.exports = function (grunt) {
 
     grunt.registerMultiTask('js_render', 'Plugin to embed JSRender templates in JS files', function () {
         var options = this.options({
-                separator: ';'
+                cwd: false,
+                separator: ';',
+                preserveUrls: false
             }),
             compiler = new Compiler(grunt, options);
 
+
         this.files.forEach(function (f) {
-            f.src
+            grunt.file.expand({ cwd: options.cwd }, f.src)
                 .filter(filter)
                 .map(compiler.compile);
 
