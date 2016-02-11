@@ -1,31 +1,73 @@
 # grunt-js-render
 
-Grunt plugin to automatically embed [js-render](https://github.com/BorisMoore/jsrender) templates in script tags.
+> Plugin to embed JSRender templates in JS files
 
-This plugin is heavily inspired by [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates)
+## Getting Started
 
-## Installation
+This plugin requires Grunt `~0.4.5`
 
-Install the plugin
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
+```shell
+npm install grunt-js-render --save-dev
 ```
-npm install --save-dev grunt-js-render
-```
 
-Load the plugin in your `Gruntfile`:
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
-```
+```js
 grunt.loadNpmTasks('grunt-js-render');
 ```
 
-## Examples
+## The "js_render" task
 
+### Overview
+In your project's Gruntfile, add a section named `js_render` to the data object passed into `grunt.initConfig()`.
+
+```js
+grunt.initConfig({
+  js_render: {
+    options: {
+      // Task-specific options go here.
+    },
+    your_target: {
+      // Target-specific file lists and/or options go here.
+    },
+  },
+});
 ```
-jsrender: {
-    app: {
-        cwd: 'path/to/workdir',
-        src: 'templates/**.html',
-        dest: 'build/app.templates.js'
-    }
-}
+
+### Options
+
+#### options.separator
+Type: `String`
+Default value: `',  '`
+
+A string value that is used to do something with whatever.
+
+#### options.punctuation
+Type: `String`
+Default value: `'.'`
+
+A string value that is used to do something else with whatever else.
+
+### Usage Examples
+
+#### Default Options
+In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+
+```js
+grunt.initConfig({
+  js_render: {
+    options: {},
+    files: {
+      'dest/templates.js': ['templates/**.html', 'src/templates'],
+    },
+  },
+});
 ```
+
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+## Release History
+_(Nothing yet)_
