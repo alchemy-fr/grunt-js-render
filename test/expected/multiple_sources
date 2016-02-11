@@ -1,0 +1,2 @@
+$.templates("test_fixtures_template", "<html><head></head><body>{{:content}}</body></html>");
+$.templates("test_fixtures_custom_template", "<html><head></head><body class=\"custom\">{{:content}}</body></html>");

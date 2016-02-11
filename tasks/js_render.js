@@ -22,9 +22,7 @@ module.exports = function (grunt) {
     }
 
     function join(options) {
-        return function () {
-            return grunt.util.normalizelf(options.separator);
-        };
+        return grunt.util.normalizelf(options.separator + '\n');
     }
 
     grunt.registerMultiTask('js_render', 'Plugin to embed JSRender templates in JS files', function () {
