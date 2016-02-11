@@ -35,7 +35,9 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "jsrender",
+    "alchemy"
   ],
   "dependencies": {
     "html-minifier": "^1.1.1"
