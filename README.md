@@ -2,6 +2,8 @@
 
 > Plugin to embed JSRender templates in JS files
 
+[![Build Status](https://travis-ci.org/alchemy-fr/grunt-js-render.svg?branch=master)](https://travis-ci.org/alchemy-fr/grunt-js-render)
+
 ## Getting Started
 
 This plugin requires Grunt `~0.4.5`
