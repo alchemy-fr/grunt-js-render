@@ -2,6 +2,7 @@
 
 > Plugin to embed JSRender templates in JS files
 
+[![Circle CI](https://circleci.com/gh/alchemy-fr/grunt-js-render.svg?style=svg)](https://circleci.com/gh/alchemy-fr/grunt-js-render)
 [![Build Status](https://travis-ci.org/alchemy-fr/grunt-js-render.svg?branch=master)](https://travis-ci.org/alchemy-fr/grunt-js-render)
 
 ## Getting Started
