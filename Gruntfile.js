@@ -35,11 +35,18 @@ module.exports = function (grunt) {
                     'tmp/default_options.js': ['test/fixtures/template.html']
                 }
             },
+            custom_base: {
+                options: {
+                    cwd: 'test/fixtures'
+                },
+                files: {
+                    'tmp/custom_base.js': ['template.html']
+                }
+            },
             multiple_sources: {
                 files: {
                     'tmp/multiple_sources.js': [
-                        'test/fixtures/template.html',
-                        'test/fixtures/custom_template.html'
+                        'test/fixtures/glob/*.html'
                     ]
                 }
             }
@@ -59,7 +66,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Whenever the "test" task is run, first clean the "tmp" dir, then run this
     // plugin's task(s), then test the result.

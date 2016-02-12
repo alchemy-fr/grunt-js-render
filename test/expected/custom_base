@@ -1,0 +1,4 @@
+(function (jQuery) {
+    'use strict';
+    jQuery.templates("template.html", "<html><head></head><body>{{:content}}</body></html>");
+}($));

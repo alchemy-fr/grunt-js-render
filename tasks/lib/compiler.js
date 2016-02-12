@@ -7,8 +7,12 @@ var Compiler = function (grunt, options) {
     var buffer = [];
 
     this.mapPath = function (path) {
-        return path.replace(/\//g, '_').replace('.html', '');
-    }
+        if (options.cwd) {
+            return options.cwd.replace(/\/$/, '').concat('/').concat(path);
+        }
+
+        return path;
+    };
 
     this.minify = function (content) {
         return minify(content, {
@@ -21,14 +25,14 @@ var Compiler = function (grunt, options) {
     };
 
     this.compile = function (file) {
-        buffer.push(that.registerTemplate(that.mapPath(file), that.minify(grunt.file.read(file))));
+        buffer.push(that.registerTemplate(file, that.minify(grunt.file.read(that.mapPath(file)))));
     };
 
     this.getCompiledFile = function () {
         return [
             '(function (jQuery) {',
             '    \'use strict\';',
-            buffer.join(options.separator + '\n').concat(options.separator),
+            buffer.join(';\n').concat(';'),
             '}($));'
         ].join('\n');
     };
