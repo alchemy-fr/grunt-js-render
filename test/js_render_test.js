@@ -38,8 +38,8 @@ exports.js_render = {
     multiple_sources: function (test) {
         test.expect(1);
 
-        var actual = grunt.file.read('tmp/default_options.js');
-        var expected = grunt.file.read('test/expected/default_options');
+        var actual = grunt.file.read('tmp/multiple_sources.js');
+        var expected = grunt.file.read('test/expected/multiple_sources');
 
         test.equal(actual.trim(), expected.trim(), 'Multiple templates should be compiled and appended to the same file.');
         test.done();

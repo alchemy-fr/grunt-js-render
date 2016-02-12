@@ -1,5 +1,5 @@
 (function (jQuery) {
     'use strict';
-    jQuery.templates("test/fixtures/template.html", "<html><head></head><body>{{:content}}</body></html>");
-    jQuery.templates("test/fixtures/custom_template.html", "<html><head></head><body class=\"custom\">{{:content}}</body></html>");
+    jQuery.templates("test/fixtures/glob/custom_template.html", "<html><head></head><body class=\"custom\">{{:content}}</body></html>");
+    jQuery.templates("test/fixtures/glob/template.html", "<html><head></head><body>{{:content}}</body></html>");
 }($));

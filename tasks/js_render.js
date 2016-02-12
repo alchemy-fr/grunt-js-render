@@ -30,13 +30,13 @@ module.exports = function (grunt) {
                 cwd: false,
                 separator: ';',
                 preserveUrls: false
-            }),
-            compiler = new Compiler(grunt, options);
-
+            });
 
         this.files.forEach(function (f) {
-            grunt.file.expand({ cwd: options.cwd }, f.src)
-                .filter(filter)
+            var compiler = new Compiler(grunt, options);
+
+            grunt.file
+                .expand({ cwd: options.cwd ? options.cwd : "" }, f.orig.src)
                 .map(compiler.compile);
 
             grunt.file.write(

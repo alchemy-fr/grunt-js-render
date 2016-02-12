@@ -40,14 +40,13 @@ module.exports = function (grunt) {
                     cwd: 'test/fixtures'
                 },
                 files: {
-                    'tmp/custom_base.js': ['test/fixtures/template.html']
+                    'tmp/custom_base.js': ['template.html']
                 }
             },
             multiple_sources: {
                 files: {
                     'tmp/multiple_sources.js': [
-                        'test/fixtures/template.html',
-                        'test/fixtures/custom_template.html'
+                        'test/fixtures/glob/*.html'
                     ]
                 }
             }
