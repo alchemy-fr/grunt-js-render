@@ -1,7 +1,7 @@
 {
   "name": "grunt-js-render",
   "description": "Plugin to embed JSRender templates in JS files",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/alchemy-fr/grunt-js-render",
   "author": {
     "name": "Thibaud Fabre",
